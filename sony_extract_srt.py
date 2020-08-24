@@ -1,5 +1,5 @@
 """
-Extracts the Sony (probably the other brabdsm too) video files metadata to the SRT subtitles
+Extracts the Sony (probably the other brands too) video files metadata to the SRT subtitles
 
 Usage: simply run `python sony_extract_srt.py` in the directory containing the video files
 

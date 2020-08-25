@@ -1,16 +1,16 @@
 """
-Extracts the Sony (probably the other brands too) video files metadata to the SRT subtitles
+Extracts the Sony (probably the other brands too) video files metadata as the SRT subtitles
 
-Usage: simply run `python sony_extract_srt.py` in the directory containing the video files
+Usage: run `python sony_extract_srt.py` in the directory containing the original camera video files
 
-Sorry, works under the Windows only
+Sorry, works under the Windows only. Probably will work in MacOS/Linux, too, with the minimal changes but, as for now, it don't
 
 The following prerequisites should be installed:
 
 - Python 3.8 (the other versions have not been checked)
-- ExifTools
+- ExifTools (not too old)
 
-The paths to the exiftool executable should be set below in order this to run properly
+The path to the exiftool executable should be set below in order this to run properly
 """
 
 import os
@@ -22,20 +22,18 @@ import glob
 import re
 from datetime import timedelta, datetime, timezone
 
-# show ffmpeg args
-SHOW_ARGS = True
+# ======================== CONSTANTS ========================
 
 # ExifTool binary path
 EXIFTOOL = os.environ['ProgramFiles(x86)'] + r'\EXIF\ExifTool\exiftool.exe'
 # ExifTool output lines delimiter
 EXIFTOOL_LINEBREAK = "\r\n"
 
-# ExifTool:Warning=FileName encoding not specified
-# chorus of voices: unicode is... perl: wats unicode?
+# Problem: ExifTool:Warning=FileName encoding not specified
 # discussion: https://exiftool.org/forum/index.php?topic=9753.0
 # FAQ: https://exiftool.org/faq.html#Q10
-# in Windows it's probably the value of HKLM\SYSTEM\CurrentControlSet\Control\Nls\CodePage\ACP
-# but not sure
+# in Windows it's probably the value of `HKLM\SYSTEM\CurrentControlSet\Control\Nls\CodePage\ACP`
+# but not for sure
 FILESYSTEM_CODEPAGE = 'cp1251'
 
 # video files mask

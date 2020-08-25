@@ -10,7 +10,7 @@ Sorry, works under the Windows only. Probably will work in MacOS/Linux, too, wit
 
 The following prerequisites should be installed:
 
-- Python 3.8 (the other versions have not been checked)
-- ExifTools (any not too old)
+- [Python 3.8](https://www.python.org/downloads/) (the other versions have not been checked)
+- [ExifTools](https://exiftool.org/) (not too old)
 
 The path to the exiftool executable should be set below in order this to run properly

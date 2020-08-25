@@ -1,5 +1,7 @@
 # video_utils
 
+## sony_extract_srt.py
+
 Extracts the Sony (probably the other brands too) video files metadata as the SRT subtitles
 
 Usage: run `python sony_extract_srt.py` in the directory containing the original camera video files
